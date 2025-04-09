@@ -15,8 +15,7 @@ export class RegisterComponent {
     name: ['', [cv.minLength(3), cv.maxLength(255)]],
     email: ['', [cv.required, cv.email]],
     password: ['', [cv.required]],
-    confirm_password: ['', [cv.required]],
-    remember: [true, []],
+    confirm_password: ['', [cv.required]]
   });
 
 
