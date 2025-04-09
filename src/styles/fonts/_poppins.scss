@@ -1,0 +1,14 @@
+$path: "/fonts/poppins/";
+$types: (300: 300, regular: 400, 500: 500, 600: 600, 700: 700);
+$font: "poppins-v12-latin-";
+@each $type, $weight in $types {
+  $temp: #{$path}#{$font}#{$type};
+  @font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: $weight;
+    src: url("#{$temp}.eot");
+    src: url("#{$temp}.eot?#iefix") format("embedded-opentype"), url("#{$temp}.woff2") format("woff2"), url("#{$temp}.woff") format("woff"), url("#{$temp}.ttf") format("truetype");
+    font-display: fallback;
+  }
+}
