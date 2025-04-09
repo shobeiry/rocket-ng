@@ -10,6 +10,7 @@ import {ButtonComponent} from '@shared/components/button/button.component';
 import {TextLinkComponent} from '@shared/components/text-link/text-link.component';
 import {CheckboxComponent} from '@shared/components/checkbox/checkbox.component';
 import {RegisterComponent} from './register/register.component';
+import {Gem, LucideAngularModule} from 'lucide-angular';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {RegisterComponent} from './register/register.component';
     InputComponent,
     ButtonComponent,
     TextLinkComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    LucideAngularModule.pick({Gem})
   ],
   providers: [
     provideRouter(routes)
