@@ -9,12 +9,14 @@ import {InputComponent} from '@shared/components/input/input.component';
 import {ButtonComponent} from '@shared/components/button/button.component';
 import {TextLinkComponent} from '@shared/components/text-link/text-link.component';
 import {CheckboxComponent} from '@shared/components/checkbox/checkbox.component';
+import {RegisterComponent} from './register/register.component';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
+    RegisterComponent
   ],
   imports: [
     LabelComponent,
