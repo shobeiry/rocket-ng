@@ -3,7 +3,7 @@
   class="flex gap-2 items-end justify-center text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 cursor-pointer">
   <div [class]="mergedClass()">
     @if (checked()) {
-      <lucide-icon [img]="CheckIcon" size="14" class="absolute left-0 top-0" color="white"></lucide-icon>
+      <lucide-icon [img]="CheckIcon" size="14" class="absolute left-0 top-0 color-white dark:color-white" [strokeWidth]="3"></lucide-icon>
     }
   </div>
   <div>
