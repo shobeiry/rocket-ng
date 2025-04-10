@@ -5,7 +5,7 @@ import {cn} from '@shared/utils';
 @Component({
   selector: 'rc-input',
   imports: [],
-  template: `<input [class]="mergedClass()" [attr.placeholder]="placeholder()" [value]="value" (input)="onInput($event)" (blur)="onTouched()" [disabled]="disabled()"/>`,
+  template: `<input [type]="type()" [class]="mergedClass()" [attr.placeholder]="placeholder()" [value]="value" (input)="onInput($event)" (blur)="onTouched()" [disabled]="disabled()"/>`,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -16,6 +16,7 @@ import {cn} from '@shared/utils';
 })
 export class InputComponent implements ControlValueAccessor {
   class = input<string>();
+  type = input<string | undefined>();
   placeholder = input<string>();
   disabled = model(false)
 
