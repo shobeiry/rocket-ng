@@ -1,20 +1,27 @@
-import {Component, computed, forwardRef, input, model} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {Component, computed, inject, input, model} from '@angular/core';
+import {ControlValueAccessor, NgControl} from '@angular/forms';
 import {cn} from '@shared/utils';
+import {InputErrorTranslatorPipe} from '@shared/components/input/input-error-translator.pipe';
 
 @Component({
   selector: 'rc-input',
-  imports: [],
-  template: `<input [type]="type()" [class]="mergedClass()" [attr.placeholder]="placeholder()" [value]="value" (input)="onInput($event)" (blur)="onTouched()" [disabled]="disabled()"/>`,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
+  imports: [
+    InputErrorTranslatorPipe
   ],
+  template: `
+    <input
+      [type]="type()" [class]="mergedClass()" [value]="value" [disabled]="disabled()"
+      [attr.placeholder]="placeholder()" [attr.aria-invalid]="control?.invalid"
+      (input)="onInput($event)" (blur)="onTouched()"/>
+    @if (control && control.errors) {
+      <p class="text-sm text-red-500 mt-2">
+        {{ control.errors | inputErrorTranslator }}
+      </p>
+    }
+  `,
 })
 export class InputComponent implements ControlValueAccessor {
+  ngControl: NgControl = inject(NgControl, {self: true});
   class = input<string>();
   type = input<string | undefined>();
   placeholder = input<string>();
@@ -29,6 +36,16 @@ export class InputComponent implements ControlValueAccessor {
   ))
 
   value: any = '';
+
+  constructor() {
+    if (this.ngControl) {
+      this.ngControl.valueAccessor = this;
+    }
+  }
+
+  get control() {
+    return this.ngControl?.control;
+  }
 
   onChange = (value: any) => {
   };
