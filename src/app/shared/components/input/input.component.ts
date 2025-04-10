@@ -11,9 +11,9 @@ import {InputErrorTranslatorPipe} from '@shared/components/input/input-error-tra
   template: `
     <input
       [type]="type()" [class]="mergedClass()" [value]="value" [disabled]="disabled()"
-      [attr.placeholder]="placeholder()" [attr.aria-invalid]="control?.invalid"
+      [attr.placeholder]="placeholder()" [attr.aria-invalid]="!!(control && control.invalid && (control.touched || control.dirty))"
       (input)="onInput($event)" (blur)="onTouched()"/>
-    @if (control && control.errors) {
+    @if (control && control.invalid && (control.touched || control.dirty)) {
       <p class="text-sm text-red-500 mt-2">
         {{ control.errors | inputErrorTranslator }}
       </p>
