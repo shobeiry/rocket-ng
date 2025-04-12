@@ -18,10 +18,11 @@ Designed for fast development, elegant UI, and full support for multi languages 
 
 ## 📦 Tech Stack
 
-- **Framework:** Angular
-- **Styling:** Tailwind CSS v4
-- **Bundler:** Vite
-- **Languages:** TypeScript, SCSS
+- **Framework:** [Angular](https://angular.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icon Pack:** [Lucide](https://lucide.dev/)
+- **Bundler:** [Vite](https://vite.dev/)
+- **Languages:** [TypeScript](https://www.typescriptlang.org/), [SCSS](https://sass-lang.com/)
 - **Internationalization:** Custom i18n
 - **Direction:** RTL / LTR dynamic support
 
@@ -33,7 +34,7 @@ Designed for fast development, elegant UI, and full support for multi languages 
 
 ```bash
 git clone https://github.com/shobeiry/rocket-ng
-cd ng-rocket
+cd rocket-ng
 ```
 
 ### 2. Install dependencies
