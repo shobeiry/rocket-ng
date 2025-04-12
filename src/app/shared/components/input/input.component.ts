@@ -10,7 +10,7 @@ import {TransPipe} from '@i18n';
   ],
   template: `
     <input
-      [type]="type()" [class]="mergedClass()" [value]="value" [disabled]="disabled()"
+      [type]="type()" [class]="mergedClass()" [value]="value" [disabled]="disabled()" [readOnly]="readonly()"
       [attr.placeholder]="placeholder()" [attr.aria-invalid]="!!(control && control.invalid && (control.touched || control.dirty))"
       (input)="onInput($event)" (blur)="onTouched()"/>
     @if ((control && control.invalid && (control.touched || control.dirty)) && control.errors) {
@@ -26,6 +26,7 @@ export class InputComponent implements ControlValueAccessor {
   type = input<string | undefined>();
   placeholder = input<string>();
   disabled = model(false)
+  readonly = model(false)
 
   mergedClass = computed(() => cn(
     "border-input file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0",
