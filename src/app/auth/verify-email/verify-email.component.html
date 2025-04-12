@@ -1,0 +1,18 @@
+<div class="flex flex-col items-center gap-8">
+  <div class="space-y-2 text-center">
+    <h1 class="text-xl font-medium" trans>Verify email</h1>
+    <p class="text-muted-foreground text-center text-sm" trans>Please verify your email address by clicking on the link we just emailed to you.</p>
+  </div>
+
+  <form [formGroup]="verifyEmailForm" class="flex flex-col gap-6 w-100" (ngSubmit)="onSubmit()">
+    <div class="grid gap-6">
+      <div class="flex items-center space-x-3 mt-4">
+        <rc-button tabindex="3" class="w-full">{{ "Resend verification email" | trans }}</rc-button>
+      </div>
+
+      <div class="text-muted-foreground text-center text-sm">
+        <rc-text-link>{{ "Logout" | trans }}</rc-text-link>
+      </div>
+    </div>
+  </form>
+</div>

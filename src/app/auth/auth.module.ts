@@ -7,6 +7,9 @@ import {SharedModule} from '@shared';
 import {RegisterComponent} from './register/register.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import {ChevronDown, Gem, LucideAngularModule, MonitorCog, Moon, Sun} from 'lucide-angular';
+import {VerifyEmailComponent} from './verify-email/verify-email.component';
+import {ResetPasswordComponent} from './reset-password/reset-password.component';
+import {ConfirmPasswordComponent} from './confirm-password/confirm-password.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import {ChevronDown, Gem, LucideAngularModule, MonitorCog, Moon, Sun} from 'luci
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+    VerifyEmailComponent,
+    ResetPasswordComponent,
+    ConfirmPasswordComponent
   ],
   imports: [
     SharedModule,
