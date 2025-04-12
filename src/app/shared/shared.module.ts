@@ -7,6 +7,8 @@ import {ButtonComponent} from '@shared/components/button/button.component';
 import {TextLinkComponent} from '@shared/components/text-link/text-link.component';
 import {CheckboxComponent} from '@shared/components/checkbox/checkbox.component';
 import {LabelComponent} from '@shared/components/label/label.component';
+import {TransDirective, TransPipe} from '@i18n';
+import {DropdownComponent} from '@shared/components/dropdown/dropdown.component';
 
 const STANDALONE_COMPONENTS: Array<Type<any>> = [
   LabelComponent,
@@ -14,9 +16,16 @@ const STANDALONE_COMPONENTS: Array<Type<any>> = [
   ButtonComponent,
   TextLinkComponent,
   CheckboxComponent,
+  DropdownComponent,
 ];
 const COMPONENTS: Array<Type<any>> = [];
+const STANDALONE_DIRECTIVES: Array<Type<any>> = [
+  TransDirective
+];
 const DIRECTIVES: Array<Type<any>> = [];
+const STANDALONE_PIPES: Array<Type<any>> = [
+  TransPipe
+];
 const PIPES: Array<Type<any>> = [];
 
 @NgModule({
@@ -25,7 +34,9 @@ const PIPES: Array<Type<any>> = [];
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    ...STANDALONE_COMPONENTS
+    ...STANDALONE_COMPONENTS,
+    ...STANDALONE_PIPES,
+    ...STANDALONE_DIRECTIVES
   ],
   declarations: [
     ...COMPONENTS,
@@ -40,7 +51,9 @@ const PIPES: Array<Type<any>> = [];
     ...COMPONENTS,
     ...DIRECTIVES,
     ...PIPES,
-    ...STANDALONE_COMPONENTS
+    ...STANDALONE_COMPONENTS,
+    ...STANDALONE_PIPES,
+    ...STANDALONE_DIRECTIVES
   ]
 })
 export class SharedModule {

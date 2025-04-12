@@ -6,7 +6,7 @@ import {AuthComponent} from './auth.component';
 import {SharedModule} from '@shared';
 import {RegisterComponent} from './register/register.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
-import {Gem, LucideAngularModule} from 'lucide-angular';
+import {ChevronDown, Gem, LucideAngularModule, MonitorCog, Moon, Sun} from 'lucide-angular';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import {Gem, LucideAngularModule} from 'lucide-angular';
   ],
   imports: [
     SharedModule,
-    LucideAngularModule.pick({Gem})
+    LucideAngularModule.pick({Gem, ChevronDown, Moon, Sun, MonitorCog})
   ],
   providers: [
     provideRouter(routes)

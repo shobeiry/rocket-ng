@@ -1,35 +1,37 @@
 <div class="flex flex-col items-center gap-8">
   <div class="space-y-2 text-center">
-    <h1 class="text-xl font-medium">Create an account</h1>
-    <p class="text-muted-foreground text-center text-sm">Enter your details below to create your account</p>
+    <h1 class="text-xl font-medium" trans>Create an account</h1>
+    <p class="text-muted-foreground text-center text-sm" trans>Enter your details below to create your account</p>
   </div>
 
   <form [formGroup]="registerForm" class="flex flex-col gap-6 w-100" (ngSubmit)="onSubmit()">
     <div class="grid gap-6">
       <div class="grid gap-2">
-        <rc-label>Name</rc-label>
-        <rc-input tabindex="1" placeholder="Full name" formControlName="name"/>
+        <rc-label>{{ "Name" | trans }}</rc-label>
+        <rc-input tabindex="1" [placeholder]="'Full name' | trans" formControlName="name"/>
       </div>
       <div class="grid gap-2">
-        <rc-label>Email</rc-label>
-        <rc-input tabindex="2" type="email" placeholder="Email" formControlName="email"/>
+        <rc-label>{{ "Email" | trans }}</rc-label>
+        <rc-input tabindex="2" type="email" [placeholder]="'Email' | trans" formControlName="email"/>
       </div>
       <div class="grid gap-2">
-        <rc-label>Password</rc-label>
-        <rc-input tabindex="3" type="password" placeholder="Password" formControlName="password"/>
+        <rc-label>{{ "Password" | trans }}</rc-label>
+        <rc-input tabindex="3" type="password" [placeholder]="'Password' | trans" formControlName="password"/>
       </div>
       <div class="grid gap-2">
-        <rc-label>Confirm password</rc-label>
-        <rc-input tabindex="4" type="password" placeholder="Confirm password" formControlName="confirm_password"/>
+        <rc-label>{{ "Confirm password" | trans }}</rc-label>
+        <rc-input tabindex="4" type="password" [placeholder]="'Confirm password' | trans" formControlName="confirm_password"/>
       </div>
 
       <div class="flex items-center space-x-3 mt-4">
-        <rc-button tabindex="5" class="w-full">Create account</rc-button>
+        <rc-button tabindex="5" class="w-full">
+          <span trans>Create account</span>
+        </rc-button>
       </div>
 
       <div class="text-muted-foreground text-center text-sm">
-        Already have an account? &nbsp;
-        <rc-text-link route="/login">Login</rc-text-link>
+        <span trans>Already have an account?</span> &nbsp;
+        <rc-text-link route="/login">{{ "Login" | trans }}</rc-text-link>
       </div>
     </div>
   </form>

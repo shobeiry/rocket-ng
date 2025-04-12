@@ -1,21 +1,21 @@
 import {Component, computed, inject, input, model} from '@angular/core';
 import {ControlValueAccessor, NgControl} from '@angular/forms';
 import {cn} from '@shared/utils';
-import {InputErrorTranslatorPipe} from '@shared/components/input/input-error-translator.pipe';
+import {TransPipe} from '@i18n';
 
 @Component({
   selector: 'rc-input',
   imports: [
-    InputErrorTranslatorPipe
+    TransPipe
   ],
   template: `
     <input
       [type]="type()" [class]="mergedClass()" [value]="value" [disabled]="disabled()"
       [attr.placeholder]="placeholder()" [attr.aria-invalid]="!!(control && control.invalid && (control.touched || control.dirty))"
       (input)="onInput($event)" (blur)="onTouched()"/>
-    @if (control && control.invalid && (control.touched || control.dirty)) {
+    @if ((control && control.invalid && (control.touched || control.dirty)) && control.errors) {
       <p class="text-sm text-red-500 mt-2">
-        {{ control.errors | inputErrorTranslator }}
+        {{ control.errors | trans: undefined  : 'validations' }}
       </p>
     }
   `,

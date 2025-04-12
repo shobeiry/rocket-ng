@@ -1,32 +1,32 @@
 <div class="flex flex-col items-center gap-8">
   <div class="space-y-2 text-center">
-    <h1 class="text-xl font-medium">Log in to your account</h1>
-    <p class="text-muted-foreground text-center text-sm">Enter your email and password below to log in</p>
+    <h1 class="text-xl font-medium" trans>Log in to your account</h1>
+    <p class="text-muted-foreground text-center text-sm" trans>Enter your email and password below to log in</p>
   </div>
 
   <form [formGroup]="loginForm" class="flex flex-col gap-6 w-100" (ngSubmit)="onSubmit()">
     <div class="grid gap-6">
       <div class="grid gap-2">
-        <rc-label>Email</rc-label>
-        <rc-input tabindex="1" type="email" placeholder="Email" formControlName="email"/>
+        <rc-label>{{ "Email" | trans }}</rc-label>
+        <rc-input tabindex="1" type="email" [placeholder]="'Email' | trans" formControlName="email"/>
       </div>
       <div class="grid gap-2">
         <div class="flex items-center justify-between w-full">
-          <rc-label>Password</rc-label>
-          <rc-text-link route="/forgot-password" class="text-sm">Forgot password?</rc-text-link>
+          <rc-label>{{ "Password" | trans }}</rc-label>
+          <rc-text-link route="/forgot-password" class="text-sm">{{ "Forgot password?" | trans }}</rc-text-link>
         </div>
-        <rc-input tabindex="2" type="password" placeholder="Password" formControlName="password"/>
+        <rc-input tabindex="2" type="password" [placeholder]="'Password' | trans" formControlName="password"/>
       </div>
       <div class="flex items-center space-x-3">
-        <rc-checkbox formControlName="remember">Remember me</rc-checkbox>
+        <rc-checkbox formControlName="remember">{{ "Remember me" | trans }}</rc-checkbox>
       </div>
       <div class="flex items-center space-x-3 mt-4">
-        <rc-button tabindex="3" class="w-full">Login</rc-button>
+        <rc-button tabindex="3" class="w-full">{{ "Login" | trans }}</rc-button>
       </div>
 
       <div class="text-muted-foreground text-center text-sm">
-        Don't have an account? &nbsp;
-        <rc-text-link route="/register">Register</rc-text-link>
+        <span trans>Don't have an account?</span> &nbsp;
+        <rc-text-link route="/register">{{ "Register" | trans }}</rc-text-link>
       </div>
     </div>
   </form>

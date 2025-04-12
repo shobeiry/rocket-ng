@@ -24,6 +24,15 @@
       ],
       "@shared/*": [
         "src/app/shared/*"
+      ],
+      "@core": [
+        "src/app/core/index"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@i18n": [
+        "src/app/i18n/index"
       ]
     }
   },
