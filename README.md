@@ -1,4 +1,4 @@
-# 🚀 ng-rocket
+# 🚀 RocketNG
 
 A modern, multilingual dashboard built with **Angular**, **Tailwind CSS v4**, and **RTL support**.  
 Designed for fast development, elegant UI, and full support for multi languages (English, Persian (فارسی), and etc).
@@ -32,7 +32,7 @@ Designed for fast development, elegant UI, and full support for multi languages 
 ### 1. Clone the project
 
 ```bash
-git clone https://github.com/your-username/ng-rocket.git
+git clone https://github.com/shobeiry/rocket-ng
 cd ng-rocket
 npm i
 ng serve
