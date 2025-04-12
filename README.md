@@ -1,59 +1,39 @@
-# RocketNg
+# 🚀 ng-rocket
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+A modern, multilingual dashboard built with **Angular**, **Tailwind CSS v4**, and **RTL support**.  
+Designed for fast development, elegant UI, and full support for multi languages (English, Persian (فارسی), and etc).
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features
+
+- ⚡ Built with Angular 19+
+- 🎨 Tailwind CSS v4 with full RTL and LTR support
+- 🌐 i18n ready (English, Persian, ...)
+- 📱 Responsive UI components
+- 🌓 Dark mode ready
+- 🚀 Vite for blazing fast dev experience
+
+---
+
+## 📦 Tech Stack
+
+- **Framework:** Angular
+- **Styling:** Tailwind CSS v4
+- **Bundler:** Vite
+- **Languages:** TypeScript, SCSS
+- **Internationalization:** Custom i18n
+- **Direction:** RTL / LTR dynamic support
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the project
 
 ```bash
+git clone https://github.com/your-username/ng-rocket.git
+cd ng-rocket
+npm i
 ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
